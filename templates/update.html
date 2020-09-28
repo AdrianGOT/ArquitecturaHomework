@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block container %}
+    <div class="section container">
+        <div class="row card-panel" >
+            <h5 class="center teal-text">Actulizar los datos</h5>
+            <p class="center teal-text">Realice la busqueda por la marca</p>
+            <p class="center teal-text">Debe tener encuenta que solo puede edirar el modelo y el precio del telefono</p>
+            
+            <div class="container">
+                <div class="col s12 ">
+                    <form action="{{ url_for('update') }}" method="post">
+                        <div class="input-field col s12 whtie-text">
+                            <input type="text" id="m" name="marca" class="blue-grey-text" >
+                            <label for="m" class="teal-text">Marca</label>
+                        </div>
+                        <div class="input-field col s12 whtie-text">
+                            <input type="text" id="m" name="modelo" class="blue-grey-text" >
+                            <label for="m" class="teal-text">Modelo</label>
+                        </div>
+                        <div class="input-field col s12 whtie-text">
+                            <input type="text" id="m" name="precio" class="blue-grey-text" >
+                            <label for="m" class="teal-text">Precio</label>
+                        </div>
+
+                        <div class="col s12 center">
+                            <input type="submit" class="btn" value="Actualizar">
+                            <a href="{{ url_for('inicio') }}" class="btn grey">Atras</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block container %}
+    <div class="container section">
+        <div class="card-panel">
+            <div class="row">
+                <div class="col s12 center" >
+                    <h5>¿Que acción quiere realizar?</h5>
+                </div>
+                <div class="col s12 center">
+                    <a href="{{url_for('add')}}" class="btn"> Agregar  </a>
+                    <a href="{{url_for('update')}}" class="btn"> Actualizar </a>
+                    <a href="{{url_for('delete')}}" class="btn"> Eliminar  </a>
+                </div>
+                <div class="col s12 ">
+                    <table class="striped">
+                        <thead>
+                            <tr>
+                                <th class="teal-text center">Marca</th>
+                                <th class="teal-text center">Modelo</th>
+                                <th class="teal-text center">Precio($)</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for phone in phones %}
+                                <tr>
+                                    <td class="blue-grey-text center">{{ phone['marca'] }}</td>
+                                    <td class="blue-grey-text center">{{ phone['modelo'] }}</td>
+                                    <td class="blue-grey-text center">{{ phone['precio'] }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>  
+        </div>
+    </div>
+{% endblock %}
